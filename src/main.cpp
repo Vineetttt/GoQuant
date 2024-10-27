@@ -1,6 +1,7 @@
 #include <iostream>
 #include "DeribitAuth.h"
 #include "PlaceOrder.h"
+#include "CancelOrder.h"
 #include <nlohmann/json.hpp>
 
 void prettyPrintJson(const std::string& jsonStr) {
@@ -13,8 +14,8 @@ void prettyPrintJson(const std::string& jsonStr) {
 }
 
 int main() {
-    std::string client_id = "nl4jIiYR"; 
-    std::string client_secret = "-y7JN6FPCR7vkF864OJ-o78rpNxW8wn-g8D1q23ZoaE"; 
+    std::string client_id = "gezprJoG"; 
+    std::string client_secret = "BEImeE6CA_L2FbYQJDs76PrzN9DM6RsC5e57Nw7bnjc"; 
 
     try {
         // Authentication
@@ -31,11 +32,12 @@ int main() {
         PlaceOrder trading(auth.getAccessToken());
 
         // Hardcoded values for placing an order
-        std::string instrument = "ETH-PERPETUAL";
+        std::string instrument = "BTC-PERPETUAL";
         double quantity = 10;
         std::string order_type = "limit";
         std::string label = "market0000234";
         double price = 2000.0; // Only applicable for limit and stop orders
+
 
         // Place an order
         std::string order_response = trading.placeBuyOrder(instrument, quantity, order_type, label, price);
@@ -45,7 +47,11 @@ int main() {
         if (json_order.contains("error")) {
             throw std::runtime_error("Order error: " + json_order["error"]["message"].get<std::string>());
         }
-
+        
+        CancelOrder cancelOrder(auth.getAccessToken());
+        std::string cancellation_response = cancelOrder.cancelOrder("29208640589"); // Use the order ID from the order response
+        prettyPrintJson(cancellation_response);
+       
     } catch (const std::exception& e) {
         std::cerr << "Error occurred: " << e.what() << std::endl;
         return 1;
