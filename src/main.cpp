@@ -21,7 +21,6 @@ int main() {
         std::cout << "\nInitializing authentication..." << std::endl;
         DeribitAuth auth(client_id, client_secret);
         std::string auth_response = auth.authenticate();
-        std::cout << "\nAuthentication Response:\n" << std::string(50, '-') << std::endl;
         prettyPrintJson(auth_response);
 
         auto json_auth = nlohmann::json::parse(auth_response);
@@ -29,18 +28,17 @@ int main() {
             throw std::runtime_error("Failed to get access token");
         }
 
-        std::cout << "\nInitializing trading..." << std::endl;
         PlaceOrder trading(auth.getAccessToken());
 
-        // Place a buy order
-        std::string order_response = trading.placeBuyOrder(
-            "ETH-PERPETUAL", 
-            10,              
-            "market",       
-            "market0000234"  
-        );
+        // Hardcoded values for placing an order
+        std::string instrument = "ETH-PERPETUAL";
+        double quantity = 10;
+        std::string order_type = "limit";
+        std::string label = "market0000234";
+        double price = 2000.0; // Only applicable for limit and stop orders
 
-        std::cout << "\nOrder Response:\n" << std::string(50, '-') << std::endl;
+        // Place an order
+        std::string order_response = trading.placeBuyOrder(instrument, quantity, order_type, label, price);
         prettyPrintJson(order_response);
 
         auto json_order = nlohmann::json::parse(order_response);
@@ -49,9 +47,9 @@ int main() {
         }
 
     } catch (const std::exception& e) {
-        std::cerr << "Error occurred: " << e.what() << std::endl; 
+        std::cerr << "Error occurred: " << e.what() << std::endl;
         return 1;
     }
 
-    return 0; 
+    return 0;
 }
