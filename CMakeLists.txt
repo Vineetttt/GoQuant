@@ -29,6 +29,7 @@ add_executable(DeribitOrderManagementSystem
     src/CancelOrder.cpp
     src/ModifyOrder.cpp
     src/GetOrderBook.cpp
+    src/GetPosition.cpp
 )
 
 target_link_libraries(DeribitOrderManagementSystem PRIVATE

@@ -4,6 +4,7 @@
 #include "CancelOrder.h"
 #include "ModifyOrder.h"
 #include "GetOrderBook.h"
+#include "GetPosition.h"
 #include <nlohmann/json.hpp>
 
 void prettyPrintJson(const std::string& jsonStr) {
@@ -20,6 +21,7 @@ int main() {
     std::string client_secret = "BEImeE6CA_L2FbYQJDs76PrzN9DM6RsC5e57Nw7bnjc"; 
 
     try {
+        
         // Authentication
         std::cout << "\nInitializing authentication..." << std::endl;
         DeribitAuth auth(client_id, client_secret);
@@ -30,7 +32,7 @@ int main() {
         if (!json_auth.contains("result") || !json_auth["result"].contains("access_token")) {
             throw std::runtime_error("Failed to get access token");
         }
-
+        
         PlaceOrder trading(auth.getAccessToken());
 
         // Hardcoded values for placing an order
@@ -68,6 +70,12 @@ int main() {
 
         std::string order_book_response = orderBook.getOrderBook(instrument_name, depth);
         prettyPrintJson(order_book_response);
+
+        // Retrieve position
+        GetPosition getPosition(auth.getAccessToken());
+        std::string name = "ETH-PERPETUAL"; // Specify the instrument name
+        std::string position_response = getPosition.getPosition(name);
+        prettyPrintJson(position_response);
        
     } catch (const std::exception& e) {
         std::cerr << "Error occurred: " << e.what() << std::endl;
