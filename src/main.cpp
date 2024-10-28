@@ -2,6 +2,7 @@
 #include "DeribitAuth.h"
 #include "PlaceOrder.h"
 #include "CancelOrder.h"
+#include "ModifyOrder.h"
 #include <nlohmann/json.hpp>
 
 void prettyPrintJson(const std::string& jsonStr) {
@@ -51,6 +52,14 @@ int main() {
         CancelOrder cancelOrder(auth.getAccessToken());
         std::string cancellation_response = cancelOrder.cancelOrder("29208640589"); // Use the order ID from the order response
         prettyPrintJson(cancellation_response);
+
+        ModifyOrder modifyOrder(auth.getAccessToken());
+
+        int64_t order_id = 29213881074;
+        int quantity_new = 100;
+
+        std::string modify_response = modifyOrder.modifyOrder(order_id, quantity_new);
+        prettyPrintJson(modify_response);
        
     } catch (const std::exception& e) {
         std::cerr << "Error occurred: " << e.what() << std::endl;

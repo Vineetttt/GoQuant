@@ -27,6 +27,7 @@ add_executable(DeribitOrderManagementSystem
     src/DeribitAuth.cpp
     src/PlaceOrder.cpp
     src/CancelOrder.cpp
+    src/ModifyOrder.cpp
 )
 
 target_link_libraries(DeribitOrderManagementSystem PRIVATE
