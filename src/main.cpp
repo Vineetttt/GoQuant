@@ -3,6 +3,7 @@
 #include "PlaceOrder.h"
 #include "CancelOrder.h"
 #include "ModifyOrder.h"
+#include "GetOrderBook.h"
 #include <nlohmann/json.hpp>
 
 void prettyPrintJson(const std::string& jsonStr) {
@@ -50,7 +51,7 @@ int main() {
         }
         
         CancelOrder cancelOrder(auth.getAccessToken());
-        std::string cancellation_response = cancelOrder.cancelOrder("29208640589"); // Use the order ID from the order response
+        std::string cancellation_response = cancelOrder.cancelOrder("29208640589");
         prettyPrintJson(cancellation_response);
 
         ModifyOrder modifyOrder(auth.getAccessToken());
@@ -60,6 +61,13 @@ int main() {
 
         std::string modify_response = modifyOrder.modifyOrder(order_id, quantity_new);
         prettyPrintJson(modify_response);
+
+        GetOrderBook orderBook;
+        std::string instrument_name = "ETH-PERPETUAL"; 
+        int depth = 1; 
+
+        std::string order_book_response = orderBook.getOrderBook(instrument_name, depth);
+        prettyPrintJson(order_book_response);
        
     } catch (const std::exception& e) {
         std::cerr << "Error occurred: " << e.what() << std::endl;
