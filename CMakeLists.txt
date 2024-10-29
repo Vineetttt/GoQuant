@@ -40,6 +40,8 @@ add_executable(DeribitOrderManagementSystem
     src/GetOrderBook.cpp
     src/GetPosition.cpp
     src/WebSocketServer.cpp
+    src/Logger.cpp
+    src/DeribitTrading.cpp
 )
 
 target_link_libraries(DeribitOrderManagementSystem PRIVATE

@@ -36,6 +36,10 @@ std::string HttpClient::performRequest(const std::string& url) {
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
 
+    curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);
+    curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
+
+
     // Perform the request and reset headers after each call
     res = curl_easy_perform(curl);
     if (res != CURLE_OK) {
