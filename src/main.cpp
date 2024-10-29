@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "DeribitAuth.h"
 #include "PlaceOrder.h"
 #include "CancelOrder.h"
@@ -6,6 +7,8 @@
 #include "GetOrderBook.h"
 #include "GetPosition.h"
 #include <nlohmann/json.hpp>
+#include "WebSocketServer.h"
+#include <thread>
 
 void prettyPrintJson(const std::string& jsonStr) {
     try {
@@ -15,13 +18,13 @@ void prettyPrintJson(const std::string& jsonStr) {
         std::cout << "Raw response: " << jsonStr << std::endl; 
     }
 }
-
 int main() {
     std::string client_id = "gezprJoG"; 
     std::string client_secret = "BEImeE6CA_L2FbYQJDs76PrzN9DM6RsC5e57Nw7bnjc"; 
-
+    DeribitWebSocketServer server;
+    
+    // Start server on port 9002
     try {
-        
         // Authentication
         std::cout << "\nInitializing authentication..." << std::endl;
         DeribitAuth auth(client_id, client_secret);
@@ -51,6 +54,7 @@ int main() {
         if (json_order.contains("error")) {
             throw std::runtime_error("Order error: " + json_order["error"]["message"].get<std::string>());
         }
+        /*
         
         CancelOrder cancelOrder(auth.getAccessToken());
         std::string cancellation_response = cancelOrder.cancelOrder("29208640589");
@@ -70,17 +74,18 @@ int main() {
 
         std::string order_book_response = orderBook.getOrderBook(instrument_name, depth);
         prettyPrintJson(order_book_response);
+        */
 
         // Retrieve position
         GetPosition getPosition(auth.getAccessToken());
         std::string name = "ETH-PERPETUAL"; // Specify the instrument name
         std::string position_response = getPosition.getPosition(name);
         prettyPrintJson(position_response);
-       
+        server.start(9002);
     } catch (const std::exception& e) {
-        std::cerr << "Error occurred: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
         return 1;
     }
-
+    
     return 0;
 }

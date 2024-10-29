@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(CURL REQUIRED)
 find_package(nlohmann_json QUIET)
+find_package(Boost REQUIRED COMPONENTS system)
 
 if(NOT nlohmann_json_FOUND)
     include(FetchContent)
@@ -16,9 +17,17 @@ if(NOT nlohmann_json_FOUND)
     FetchContent_MakeAvailable(json)
 endif()
 
+find_path(WEBSOCKETPP_INCLUDE_DIR websocketpp/server.hpp
+    HINTS ${CMAKE_SOURCE_DIR}/external/websocketpp
+    /usr/local/include
+    /usr/include
+)
+
 include_directories(
     ${PROJECT_SOURCE_DIR}/include
     ${CURL_INCLUDE_DIRS}
+    ${Boost_INCLUDE_DIRS}
+    ${WEBSOCKETPP_INCLUDE_DIR}
 )
 
 add_executable(DeribitOrderManagementSystem 
@@ -30,9 +39,11 @@ add_executable(DeribitOrderManagementSystem
     src/ModifyOrder.cpp
     src/GetOrderBook.cpp
     src/GetPosition.cpp
+    src/WebSocketServer.cpp
 )
 
 target_link_libraries(DeribitOrderManagementSystem PRIVATE
     ${CURL_LIBRARIES}
     nlohmann_json::nlohmann_json
+    ${Boost_LIBRARIES}
 )

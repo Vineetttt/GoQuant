@@ -1,0 +1,541 @@
+Folder Structure
+--------------------------------------------------
+/
+    ges.py
+    CMakeLists.txt
+    README.md
+    .gitignore
+    .env
+include/
+    CancelOrder.h
+    GetOrderBook.h
+    DeribitAuth.h
+    HTTPClient.h
+    GetPosition.h
+    PlaceOrder.h
+    ModifyOrder.h
+.git/
+    ORIG_HEAD
+    config
+    HEAD
+    description
+    index
+    COMMIT_EDITMSG
+    FETCH_HEAD
+    objects/
+        0d/
+            fe165f5a766a1e9c8270a7d2a094159983b152
+        59/
+            806b945137760b8922b12cfd393515c7bff089
+        92/
+            c32afdc0e046cba78e7e3aa8abb0f2b8464652
+        66/
+            1eeb7b73de56f396a6965505e01b3c0fc1902a
+        68/
+            84f831748f7f987cf4b15bd3145ed01fd0b2e5
+        6f/
+            fa0204e8cb8eee5a7239a544193f45a679bf78
+        03/
+            909623a572e00b2d2aea28452320c773caaa07
+            6fff4caf009ebf34d7d30c08a6a8249b86987c
+        0e/
+            76926e90564f2c4e6f3fd59695acba5a1dbce5
+        33/
+            b74299d9dbd03b060f36d5fa0901c7c34741c1
+        05/
+            f153086aadf7f7fb97b1a8ab7dd17873954752
+        a3/
+            d6e7eea8ebb15d6eb69543b262084ea7e959ce
+            3a0b571353c5b4b987556eb0cee31b79c0c3aa
+        ad/
+            b21900dc0fefc137429473a6aa70167223c6c7
+        d7/
+            6aeafefa31e6b3d7ab0e006974f980c35dda06
+        b3/
+            f5d8ba67f378cce2089ab5293f6adeadf11572
+        da/
+            5d7a6f5b789e42f3f999b3702938afcbb4279a
+            71476773672b3fddb89a44d14c912ffb872085
+        a5/
+            d4dd2aacdd95b1e0eacdb0ba6cfff46d602459
+        d1/
+            3e857305719c71f53638010a9cfa6a564af594
+        fb/
+            b623f4e3c7f892bd9ada21c4081d3434232a28
+            6fe972cee2ee1b1ac165b493e075004ed19859
+            552c19ed2709069b98d354e444c9e3c0ad7611
+        c1/
+            0dffb244f12bbacfcc636ae40b7dd45b9fa3fa
+        pack/
+        7d/
+            0714d5b7ebb83ca5c6ccf3a18e8284bd048fcd
+        87/
+            031a2654de0e98edcbb2d7c6af1fc80d7e6ac5
+        7e/
+            e732c945adad3ed895bf53761bb38a2fecfccb
+        26/
+            6263ac23d0e66d895bf6b940a50f1c8cfa12b4
+            65c80d60d720c65c2581eb9aa326ff8c568537
+        21/
+            7d766d35038d92bd46c38f4ef456aa35629742
+            1499b0f6dd5565f4bac6a8d2fd140cb8e1adb2
+        44/
+            671f034c2f93f31a197726e0f0183536eafa8a
+        6b/
+            7972ea0c9b16bc1f9599dd5f4c34ab54a23325
+        6e/
+            2ba66a4b3bbd0ff8d6f7b30f0b11b1c4c8bca9
+        5c/
+            6d7a0abd18d3af92ff628769a8307708677bf7
+        info/
+        91/
+            1aeb928265649267d1301dae7295c9ab346c14
+        65/
+            488e77ce8e81fbc231a48ceaaacdfc4e965b5d
+        3a/
+            50dc372d2799b3267c76834cbd752face56674
+            0593a168182ba7b21f5e4aedd2f47731a435a2
+        30/
+            0cdc8a221daa41dba092d76049fc524e58996b
+        08/
+            865dcb71cfe250a29efbfbc618b584b71fae84
+        55/
+            562a287abb4d0dc1bbdae1870bfad009e030ac
+            47c27aef2b6a4345d38bee35786f2c50153b38
+        0f/
+            6fa4a0eff1d95aa8c500a9404bcbc6f4d9d2e8
+        bf/
+            760aabd7f97a89e6dc3f410a3635a5e4d65008
+        a0/
+            b8a7e797c078b1262656967067dcdd1fcf603a
+        dd/
+            16ec2dbe8121aac71f23ea760bc9aa1a2c833d
+        b6/
+            be641300c9ae1ef13ab0534fa3ecbaf9acb40e
+        d5/
+            ba712a33d11013f4f2651715b4a9569f072354
+        af/
+            57d1424ef8e182abc371ab37636f3c7da53fda
+        db/
+            fb85f5f84fa4153cd38473ebf30815a57847a3
+        a8/
+            93a1f1d8af8097f89e454cf46fdc53aa18d480
+        b9/
+            b70266ff4cf27295f16f8e9c23ff5c47d3e280
+        fa/
+            c55d7a478f9d35a05ac2fb8d6e06864b451700
+        f6/
+            d96520c922e90ebb56efcba7e5eef424db6c4f
+        e7/
+            cc1b57b4408673d6bef536ae3af866d245f508
+            ea8f95603ab92ae2d761eeb3b4df678eb65794
+        cb/
+            6060548ffd76e613466a43e627fe3ef47ac756
+        79/
+            b023bc17f365671a39b42bc7ce85bb96eed71d
+        2d/
+            fad1d7686632d2cb259d0e73ffee0023d98172
+        41/
+            18fcc927ff3fcb22b44ce6764f4b6fdb4e3cb8
+            335666d6dcb67c0186e804eaeee6e5b737237c
+        77/
+            5925181d040a52c2f5661481ffcec15e782ae0
+        1e/
+            5671480e62e3cd81d69cf7b0c8d6190f94a9c4
+        24/
+            46a3190a3a00746321bce636f2ded61d389622
+        1d/
+            2fc311f250fae1cb4679d6804b8fb1d8f1bd7e
+        2b/
+            8f2f591ba7130b700cb7f7654be252d436c8f2
+        78/
+            efb07042bb2a07bf9713ad292d0ec79a9f0df7
+        8e/
+            21e3ece8bfb8db4aa19e221d1e7449e558a9d8
+    info/
+        exclude
+    logs/
+        HEAD
+        refs/
+            heads/
+                main
+            remotes/
+                origin/
+                    main
+    hooks/
+        commit-msg.sample
+        pre-rebase.sample
+        pre-commit.sample
+        applypatch-msg.sample
+        fsmonitor-watchman.sample
+        pre-receive.sample
+        prepare-commit-msg.sample
+        post-update.sample
+        pre-merge-commit.sample
+        pre-applypatch.sample
+        pre-push.sample
+        update.sample
+        push-to-checkout.sample
+    refs/
+        heads/
+            main
+        tags/
+        remotes/
+            origin/
+                main
+src/
+    ModifyOrder.cpp
+    PlaceOrder.cpp
+    CancelOrder.cpp
+    GetPosition.cpp
+    DeribitAuth.cpp
+    GetOrderBook.cpp
+    HTTPClient.cpp
+    main.cpp
+
+
+File Contents
+--------------------------------------------------
+
+
+./ges.py
+File type: .py
+from codebase_to_text import CodebaseToText
+
+# Initialize the CodebaseToText object with all required arguments
+code_to_text = CodebaseToText(input_path="./", output_path="ans", output_type="txt", verbose=True, exclude_hidden=False)
+
+# Call the method to process the codebase
+code_to_text.get_file()
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+./CMakeLists.txt
+File type: .txt
+cmake_minimum_required(VERSION 3.10)
+project(DeribitOrderManagementSystem)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(CURL REQUIRED)
+find_package(nlohmann_json QUIET)
+
+if(NOT nlohmann_json_FOUND)
+    include(FetchContent)
+    FetchContent_Declare(
+        json
+        URL https://github.com/nlohmann/json/releases/download/v3.11.2/json.tar.xz
+    )
+    FetchContent_MakeAvailable(json)
+endif()
+
+include_directories(
+    ${PROJECT_SOURCE_DIR}/include
+    ${CURL_INCLUDE_DIRS}
+)
+
+add_executable(DeribitOrderManagementSystem 
+    src/main.cpp
+    src/HttpClient.cpp
+    src/DeribitAuth.cpp
+    src/PlaceOrder.cpp
+    src/CancelOrder.cpp
+    src/ModifyOrder.cpp
+    src/GetOrderBook.cpp
+    src/GetPosition.cpp
+)
+
+target_link_libraries(DeribitOrderManagementSystem PRIVATE
+    ${CURL_LIBRARIES}
+    nlohmann_json::nlohmann_json
+)
+
+
+!codebase-to-text --input "./" --output "sample_data" --output_type "txt"
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+./README.md
+File type: .md
+# GoQuant
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+./.gitignore
+File type: 
+# Build directory
+build/
+
+# Environment files
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Compiled files
+*.o
+*.obj
+*.exe
+*.out
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+Makefile
+
+#WebSocket
+websocketapp/
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+./.env
+File type: 
+DERIBIT_CLIENT_ID=nl4jIiYR
+DERIBIT_CLIENT_SECRET=-y7JN6FPCR7vkF864OJ-o78rpNxW8wn-g8D1q23ZoaE
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+./include/CancelOrder.h
+File type: .h
+#ifndef CANCEL_ORDER_H
+#define CANCEL_ORDER_H
+
+#include <string>
+#include <stdexcept>
+#include "HTTPClient.h"
+#include <nlohmann/json.hpp>
+
+class CancelOrder {
+public:
+    CancelOrder(const std::string& access_token);
+
+    std::string cancelOrder(const std::string& order_id);
+
+private:
+    std::string access_token;
+    HttpClient http_client;
+};
+
+#endif
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+./include/GetOrderBook.h
+File type: .h
+#ifndef GET_ORDER_BOOK_H
+#define GET_ORDER_BOOK_H
+
+#include <string>
+#include <stdexcept>
+#include "HTTPClient.h"
+#include <nlohmann/json.hpp>
+
+class GetOrderBook {
+public:
+    // Constructor
+    GetOrderBook();
+
+    // Method to get order book
+    std::string getOrderBook(const std::string& instrument_name, int depth = 5);
+
+private:
+    std::string buildRequestUrl(const std::string& instrument_name, int depth);
+};
+
+#endif
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+./include/DeribitAuth.h
+File type: .h
+#ifndef DERIBIT_AUTH_H
+#define DERIBIT_AUTH_H
+
+#include <string>
+#include "HTTPClient.h"
+#include <nlohmann/json.hpp>
+
+class DeribitAuth {
+public:
+    DeribitAuth(const std::string& clientId, const std::string& clientSecret);
+    std::string authenticate();
+    std::string getAccessToken() const { return access_token; }
+
+private:
+    std::string clientId;
+    std::string clientSecret;
+    std::string access_token;
+    HttpClient http_client;
+};
+#endif
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+./include/HTTPClient.h
+File type: .h
+#ifndef HTTP_CLIENT_H
+#define HTTP_CLIENT_H
+
+#include <string>
+#include <vector>
+#include <curl/curl.h>
+
+class HttpClient {
+public:
+    HttpClient();
+    ~HttpClient();
+
+    std::string get(const std::string& url, const std::vector<std::string>& headers = {});
+    std::string post(const std::string& url, const std::string& data, const std::vector<std::string>& headers = {});
+
+private:
+    CURL* curl;
+    static size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* userp);
+    void setHeaders(const std::vector<std::string>& headers, struct curl_slist*& curl_headers);
+    std::string performRequest(const std::string& url);
+
+    std::string response;
+};
+
+#endif
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+./include/GetPosition.h
+File type: .h
+#ifndef GET_POSITION_H
+#define GET_POSITION_H
+
+#include <string>
+#include <stdexcept>
+#include "HTTPClient.h"
+#include <nlohmann/json.hpp>
+
+class GetPosition {
+public:
+    GetPosition(const std::string& access_token);
+    // Method to get the positon
+    std::string getPosition(const std::string& instrument_name);
+
+private:
+    std::string access_token;
+    HttpClient http_client;
+    std::string buildRequestUrl(const std::string& instrument_name);
+};
+
+#endif
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+./include/PlaceOrder.h
+File type: .h
+#ifndef PLACE_ORDER_H
+#define PLACE_ORDER_H
+
+#include <string>
+#include <stdexcept>
+#include "HTTPClient.h"
+#include <nlohmann/json.hpp>
+
+class PlaceOrder {
+public:
+    PlaceOrder(const std::string& access_token);
+
+    // Only instrument and quantity are required. Others are optional.
+    std::string placeBuyOrder(
+        const std::string& instrument,
+        int quantity,
+        const std::string& order_type = "limit",
+        const std::string& label = "",
+        double price = 0.0 // Default to 0; should be used with limit/stop orders
+    );
+
+private:
+    std::string access_token;
+    HttpClient http_client;
+
+    void validateParameters(const std::string& instrument,int quantity, const std::string& order_type);
+    std::string buildRequestUrl(const std::string& instrument, int quantity, const std::string& order_type, const std::string& label, double price);
+};
+
+#endif
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+./include/ModifyOrder.h
+File type: .h
+#ifndef MODIFY_ORDER_H
+#define MODIFY_ORDER_H
+
+#include <string>
+#include <stdexcept>
+#include "HTTPClient.h"
+#include <nlohmann/json.hpp>
+
+class ModifyOrder {
+public:
+    ModifyOrder(const std::string& access_token);
+
+    // Only order_id, quantity, are required. Other parameters are optional.
+    std::string modifyOrder(
+        int64_t order_id,       
+        int quantity,           
+        double price=0,           
+        bool post_only = false, 
+        const std::string& adv = "",
+        double stopPx = 0.0         
+    );
+
+private:
+    std::string access_token;
+    HttpClient http_client;
+
+    void validateParameters(int64_t order_id, int quantity);
+    std::string buildRequestUrl(int64_t order_id, int quantity, double price, bool post_only, const std::string& adv, double stopPx);
+};
+
+#endif
+
