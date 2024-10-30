@@ -27,10 +27,14 @@ Clone the repository and navigate into the project directory:
 
 ```bash
 git clone [https://github.com/yourusername/DeribitOrderManagementSystem.git](https://github.com/Vineetttt/GoQuant.git)
+```bash
 cd DeribitOrderManagementSystem
+```bash
 mkdir build && cd build
+```bash
 cmake ..
+```bash
 make
-
+```bash
 ./DeribitOrderManagementSystem
-```
+
