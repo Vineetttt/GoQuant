@@ -26,7 +26,7 @@ This is a C++ application designed for order execution and management on the Der
 Clone the repository and navigate into the project directory:
 
 ```bash
-git clone [https://github.com/yourusername/DeribitOrderManagementSystem.git](https://github.com/Vineetttt/GoQuant.git)
+git clone https://github.com/Vineetttt/GoQuant.git
 ```
 ```bash
 cd DeribitOrderManagementSystem
