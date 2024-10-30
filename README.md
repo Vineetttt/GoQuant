@@ -20,3 +20,17 @@ This is a C++ application designed for order execution and management on the Der
   - `nlohmann_json`
   - `Boost (system component)`
   - `websocketpp`
+
+## Installation
+
+Clone the repository and navigate into the project directory:
+
+```bash
+git clone [https://github.com/yourusername/DeribitOrderManagementSystem.git](https://github.com/Vineetttt/GoQuant.git)
+cd DeribitOrderManagementSystem
+mkdir build && cd build
+cmake ..
+make
+
+./DeribitOrderManagementSystem
+```
