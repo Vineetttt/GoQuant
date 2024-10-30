@@ -21,6 +21,10 @@ This is a C++ application designed for order execution and management on the Der
   - `Boost (system component)`
   - `websocketpp`
 
+## Configuration
+- Before running the application, change the client ID and client secret in main.cpp
+- These credentials are required to authenticate with the Deribit API.
+
 ## Installation
 
 Clone the repository and navigate into the project directory:
